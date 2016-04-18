@@ -2,8 +2,8 @@
 	<widget xmlns = "http://www.w3.org/ns/widgets"
 		xmlns:gap = "http://phonegap.com/ns/1.0"
 		id        = "com.contact.phm"
-		versionCode="3300009"
-		version   = "33">
+		versionCode="31"
+		version   = "31">
 		<name>Contact</name>
 		<description>
 		</description>
@@ -42,17 +42,12 @@ Shay Zalman
 		<icon src="images/app_icons/android/icon_96.png" gap:platform="android" gap:density="xhdpi" />
 		
 		<gap:splash src="splash.png" />
-		<gap:splash src="images/splash/ios/spl_320.png" width="320" height="480" />
-		<gap:splash src="images/splash/ios/spl_640.png" width="640" height="960" />
+		<gap:splash src="images/splash/ios/spl_320.png" platform="ios" width="320" height="480" />
+		<gap:splash src="images/splash/ios/spl_640.png" platform="ios" width="640" height="960" />
+        <gap:splash src="images/splash/ios/spl_568.png" platform="ios" width="640" height="1136" />
+        <gap:splash src="images/splash/ios/spl_667.png" platform="ios" width="750" height="1334" />
 		<gap:splash src="images/splash/android/spl_320.png" gap:platform="android" gap:density="mdpi" />
 		<gap:splash src="images/splash/android/spl_480.png" gap:platform="android" gap:density="hdpi" />
-
-		<preference name="com.urbanairship.production_app_key" value="ZOW7fzyUR42o5LRDOEscUA" />
-		<preference name="com.urbanairship.production_app_secret" value="zQ1s_m0dT46CLYJU8btJsQ" />
-		<preference name="com.urbanairship.development_app_key" value="1YCOiSlKQdaF2fr5LWkN1w" />
-		<preference name="com.urbanairship.development_app_secret" value="hmRGaV_rQTi_Z43ABQ7_dg" />
-		<preference name="com.urbanairship.in_production" value="true" />
-		<preference name="com.urbanairship.gcm_sender" value="951843911803" />
 
 		<access origin="*" browserOnly="true" />
 		<allow-navigation href="*" />
