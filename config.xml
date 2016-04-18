@@ -2,7 +2,7 @@
 	<widget xmlns = "http://www.w3.org/ns/widgets"
 		xmlns:gap = "http://phonegap.com/ns/1.0"
 		id        = "com.contact.phm"
-		versionCode="3300008"
+		versionCode="3300009"
 		version   = "33">
 		<name>Contact</name>
 		<description>
@@ -26,8 +26,9 @@ Shay Zalman
 		<preference name="show-splash-screen-spinner" value="true" />
 		<preference name="auto-hide-splash-screen" value="true" />
 		<preference name="disable-cursor" value="true" />
-		<preference name="android-minSdkVersion" value="7" />
-		<preference name="android-maxSdkVersion" value="17" />
+		<preference name="android-minSdkVersion" value="18" />
+		<preference name="android-maxSdkVersion" value="23" />
+		<preference name="android-targetSdkVersion" value="23" />
 		<preference name="android-installLocation" value="auto" />
 		<preference name="splash-screen-duration" value="2" />
 		<preference name="load-url-timeout" value="0" />
