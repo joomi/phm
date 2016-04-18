@@ -1,0 +1,62 @@
+<div data-role="page" class="league_page gift_page gifts_page">
+    <ng-include src="'templates/header.html'"></ng-include>
+    <div data-role="content" data-theme="a">
+        <div class="contentWrapper">
+        	<div class="topMenu contentCategoriesGift">
+                <div  class="paddingContainer">
+                    <div class="opacityContainer width100"></div>
+                    <ul class="categoryList noBullet width100">
+                        <li ng-if="category == 1" class="first active"><a href="#/league/gifts/1">ספורט</a></li>
+                        <li ng-if="category != 1"  class="first"><a href="#/league/gifts/1">ספורט</a></li>
+                        <li ng-if="category == 2" class="active"><a href="#/league/gifts/2">אקסטרים</a></li>
+                        <li ng-if="category != 2"><a href="#/league/gifts/2">אקסטרים</a></li>
+                        <li ng-if="category == 3" class="active"><a href="#/league/gifts/3">נופש</a></li>
+                        <li ng-if="category != 3"><a href="#/league/gifts/3">נופש</a></li>
+                        <li ng-if="category == 4" class="active"><a href="#/league/gifts/4">בידור</a></li>
+                        <li ng-if="category != 4"  class="last "><a href="#/league/gifts/4">בידור</a></li>
+                    </ul>
+                </div>
+
+                </div>
+            </div>
+            <div  class="league_content">
+				<h2 class="mainTitle">מתנות לבחירה למקום ראשון</h2>
+				<ul class="firstplace firstUl noBullet">
+                	<li ng-repeat="gift in data" ng-if="gift.place == 1">
+                    	<a class="imgHolder" href="#/league/gift/{{gift.id}}" style="background-image:url({{base}}{{gift.intro_img}})"> </a>
+                        <a class="linkHolder" href="#/league/gift/{{gift.id}}">{{gift.title}}</a>
+                    </li>
+                </ul>
+
+
+                <h2 class="mainTitle">מתנות לבחירה למקום שני</h2>
+				<ul class="restUl noBullet">
+                	<li  ng-repeat="gift in data" ng-if="gift.place == 2">
+                    	<a class="imgHolder" href="#/league/gift/{{gift.id}}" style="background-image:url({{base}}{{gift.intro_img}})"> </a>
+                        <a class="linkHolder" href="#/league/gift/{{gift.id}}">{{gift.title}}</a>
+                    </li>
+                </ul>
+                <div class="clear"></div>
+
+                <h2 class="mainTitle">מתנות לבחירה למקום שלישי</h2>
+				<ul class="restUl noBullet">
+                	<li ng-repeat="gift in data" ng-if="gift.place == 3">
+                    	<a class="imgHolder" href="#/league/gift/{{gift.id}}" style="background-image:url({{base}}{{gift.intro_img}})"> </a>
+                        <a class="linkHolder" href="#/league/gift/{{gift.id}}">{{gift.title}}</a>
+                    </li>
+                </ul>
+                <div class="clear"></div>
+
+                <h2 class="mainTitle">מתנות לבחירה למקום רביעי</h2>
+				<ul class="restUl noBullet">
+                	<li ng-repeat="gift in data" ng-if="gift.place == 4">
+                    	<a class="imgHolder" href="#/league/gift/{{gift.id}}" style="background-image:url({{base}}{{gift.intro_img}})"> </a>
+                        <a class="linkHolder" href="#/league/gift/{{gift.id}}">{{gift.title}}</a>
+                    </li>
+                </ul>
+                <div class="clear"></div>
+
+            </div>
+        </div>
+    </div>
+</div>

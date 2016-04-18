@@ -1,0 +1,11 @@
+<footer class="content_footer">
+	<a ng-if="activeFooter == 'pricelist'" class="productPrice active" href="#/pricelist" title="מחירון מוצרים"></a>
+	<a ng-if="activeFooter != 'pricelist'" class="productPrice" href="#/pricelist" title="מחירון מוצרים"></a>
+	<a ng-if="activeFooter == 'catalogue'" class="productCatalog active" href="#/catelogue" title="קטלוג מוצרים"></a>
+	<a ng-if="activeFooter != 'catalogue'" class="productCatalog" href="#/catelogue" title="קטלוג מוצרים"></a>
+	<a ng-if="activeFooter == 'about'" class="contact active" href="#/about" title=""></a>
+	<a ng-if="activeFooter != 'about'" class="contact" href="#/about" title=""></a>
+	<a ng-if="activeFooter == 'about_phm'" class="PMltd active" href="#/about_phm" title="אודות החברה"></a>
+	<a ng-if="activeFooter != 'about_phm'" class="PMltd" href="#/about_phm" title="אודות החברה"></a>
+    <div class="clear"></div>
+</footer>

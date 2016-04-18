@@ -1,0 +1,26 @@
+<div data-role="page" class="league_page messagesPage knowlagePageMain">
+    <ng-include src="'templates/header.html'"></ng-include>
+    <div data-role="content" data-theme="a">
+        <div class="contentWrapper">
+            <div class="topTitles long">
+                <h2 >העברת מידע</h2>
+                <div class="dates"> {{data.assign.start_date | date:'dd.MM.yyyy'}} - {{data.assign.end_date | date:'dd.MM.yyyy'}}</div>
+            </div>
+            <div class="league_content knowlagePageTable">
+                <!-- <h2 class="mainTitle">קמעונאי יקר,<br />תודה על השתתפותך בפעילות!</h2> -->
+                <div class="width100">
+                    <div class="floatLeft leftSpriteClockContainer width60">
+                        <div id="cntdwn" class="backgroundClockLeague" ng-bind-html="DisplayStr"></div>
+                    </div>
+                    <div class="rightSpriteLogoContainer knowledge floatRight width40"></div>
+                    <div class="clear"></div>
+                </div>
+                <div class="data">
+                    <p>כל הכבוד!<br />
+פתרת את הפעילות ב: {{time}} דקות<br />
+מיקומך בליגה יפורסם בימים הקרובים ותוכל לבחור מתנה בהתאם.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

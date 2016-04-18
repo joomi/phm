@@ -1,0 +1,21 @@
+<div data-role="page" class="aboutPage">
+    <ng-include src="'templates/header.html'"></ng-include>
+    <div data-role="content" class="business_data_page aboutTabs" data-theme="a">
+        <div class="contentWrapper">
+            <h2 class="mainTitle">{{data.title}}</h2>
+            <div data-hbo-tabs>
+            <div class="tabsWrapper ui-tabs ui-widget ui-widget-content ui-corner-all">
+				<ul>
+                	<li class="ui-tabs-active" ng-repeat="(key,row) in data.tabs" ng-if="key == 0"><a data-show-tab href="#tab{{key}}">{{row.field_name}}</a></li>
+                	<li ng-repeat="(key,row) in data.tabs" ng-if="key != 0"><a data-show-tab href="#tab{{key}}">{{row.field_name}}</a></li>
+                </ul>
+                <!--<div class="ng-scope ng-binding ui-tabs-panel ui-widget-content ui-corner-bottom" ng-repeat="(key,row) in data.tabs" id="tab{{key}}">{{row.field_value}}</div>-->
+                <div class="ng-scope ng-binding ui-tabs-panel ui-widget-content ui-corner-bottom" id="tab0" aria-labelledby="ui-id-2" role="tabpanel" aria-expanded="true" aria-hidden="false" style="display: block;"></div>
+                <div class="ng-scope ng-binding ui-tabs-panel ui-widget-content ui-corner-bottom" id="tab1" aria-labelledby="ui-id-1" role="tabpanel" aria-expanded="false" aria-hidden="true" style="display: none;"></div>
+                <div class="ng-scope ng-binding ui-tabs-panel ui-widget-content ui-corner-bottom" id="tab2" aria-labelledby="ui-id-1" role="tabpanel" aria-expanded="false" aria-hidden="true" style="display: none;"></div>
+            </div>
+            </div>
+        </div>
+    </div>
+</div>
+

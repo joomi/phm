@@ -1,0 +1,49 @@
+<div data-role="page" class="login_page {{hideLogin}}">
+    <div data-role="content" data-theme="a">
+        <div class="contentWrapper">
+            <div class="league_content">
+              <div class="logoHolder"></div>
+                <div id="login">
+                    <form ng-submit="login()">
+                        <input placeholder="שם משתמש" type="text" name="username" class="inputField" id="username" ng-model="username" value="">
+                        <input placeholder="סיסמא" type="password" name="password" class="inputField" id="password" ng-model="password" value="">
+                        <div class="agreementContainer ">
+                            <a ng-click="terms()">תנאי שימוש</a>
+                            <input type="checkbox" name="takanon" id="trueTakanon"/>
+                            <label for="trueTakanon">קראתי את תנאי השימוש ואני מסכים להם</label>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="clear"></div>
+                        <input type="submit" class="submitBtn" value=" " >
+                    </form>
+
+					<div class="message" ng-if="message">{{message}}</div>
+                    <div class="forgotPassContainer ">
+                        <h2>שכחת סיסמא?</h2>
+                        <p>צור קשר עם מקדם המכירות שלך</p>
+                        <!--<a onclick="location.reload(true);">reload</a>-->
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="display:none" id="terms_container">
+        <div>
+            <h1></h1>
+            <p></p>
+        </div>
+    </div>
+    <a ng-click="closeLb()" style="display:none;" id="closeLb"></a>
+    <p style="text-align: center; margin:0 0; padding-bottom:8px;"><a href="http://www.joomi.co.il" target="_blank"><img src="images/joomi.png" alt="Joomi - Going all the web" style="width: 46px;"></a></p>
+</div>
+<style>
+body{ padding-bottom:0; margin-bottom:0; height:100%; }
+nav#menu{ display:none;}
+  [menu-slideout].menu-slideout-open {
+    -webkit-transform: translate3d(0%, 0, 0);
+    -moz-transform: translate3d(0%, 0, 0);
+    -ms-transform: translate3d(0%, 0, 0);
+    -o-transform: translate3d(0%, 0, 0);
+    transform: translate3d(0%, 0, 0); }
+</style>

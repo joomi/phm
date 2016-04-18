@@ -1,0 +1,52 @@
+<div data-role="page" class="league_page pageQuiz">
+    <ng-include src="'templates/header.html'"></ng-include>
+    <div data-role="content" data-theme="a">
+        <div class="contentWrapper">
+
+        	<div class="long topTitles">
+            	<h2>פעילות סנן</h2>
+                <div class="dates">
+					{{data.assign.start_date | date:'dd.MM.yyyy'}} - {{data.assign.end_date | date:'dd.MM.yyyy'}}
+				</div>
+            </div>
+			<div class="league_content knowlagePageTable" ng-if="status == 'done'">
+                <h2 class="mainTitle">סיכום פעילות</h2>
+                <div class="width100">
+                    <div class="floatLeft leftSpriteClockContainer width60">
+                        <div id="cntdwn" class="backgroundClockLeague" ng-bind-html="DisplayStr"></div>
+                    </div>
+                    <div class="rightSpriteLogoContainer filterAct floatRight width40"></div>
+                    <div class="clear"></div>
+                </div>
+                <div class="data">
+                    <ul style="  margin-left: 2%;margin-top: 7px;">
+                        <li class="value">{{date[0] | date:'dd.MM.yyyy'}}</li>
+                        <li class="name">תאריך השתתפות:</li>
+                        <li class="value">{{date[1]}}</li>
+                        <li class="name">שעת השתתפות:</li>
+                        <li class="value">{{data.filter_results.correct_answers}}</li>
+                        <li class="name">מספר תשובות נכונות:</li>
+                        <li class="value">{{time}}</li>
+                        <li class="name">זמן מענה:</li>
+                        <li class="value bottom textAlignRight gradsCell" ng-if="data.filter_results.score != '0' && data.filter_results.score != ''">{{data.filter_results.score}}</li>
+                        <li class="name bottom" ng-if="data.filter_results.score != '0' && data.filter_results.score != ''">ניקוד:</li>
+                        <li class="clear"></li>
+                    </ul>
+                </div>
+
+            </div>
+			<div class="league_content knowlagePageTable" ng-if="status == 'startQuiz'">
+				<div class="league_content">
+					<h2 class="mainTitle">קמעונאי יקר,<br />
+קרא את הקטע הבא ומצא בזמן המהיר ביותר את התמונות של 5 המילים המודגשות.<br />
+שים לב, לרשותך רק 10 הזדמנויות. אם תלחץ יותר מ- 10 פעמים – תיפסל.<br />
+בהצלחה!</h2>
+					<div class="data">
+						<div class="story" ng-bind-html="story"></div>
+						<a href="#/league/filter/{{data.filter.id}}" class="startQuiz"> </a>						
+					</div>
+				</div>
+            </div>
+        </div>
+    </div>
+</div>

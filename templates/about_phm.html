@@ -1,0 +1,17 @@
+<div data-role="page" class="aboutPage">
+    <ng-include src="'templates/header.html'"></ng-include>
+    <div data-role="content" class="business_data_page aboutTabs" data-theme="a">
+        <div class="contentWrapper">
+            <h2 class="mainTitle"></h2>
+			<div class="imgHolder" ng-if="data.img">
+            	<div class="caption" ng-if="data.caption">{{data.caption}}</div>
+                <img src="{{base}}{{data.img}}"  />
+                <!--<img src="http://pagenx.com/{{data.img}}"  />-->
+            </div>
+            <div class="contents">
+            	
+            </div>
+        </div>
+    </div>
+</div>
+

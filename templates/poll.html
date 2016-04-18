@@ -1,0 +1,23 @@
+<div data-role="page" class="poll_page">
+	<form name="quiz_form" ng-controller="savePollCtrl">
+	<button class="closeBtn" ng-click="save()">X</button>
+    <div class="poll">
+        <h1>{{data.top_title}}</h1>
+        <h2>{{data.objective}}</h2>
+            <ul class="noBullet quistions">
+                <li ng-repeat="(key,row) in data.options">
+                    <input type="radio" name="jform[selected_answer]" id="question_{{key}}" value="{{key+1}}" />
+                    <label for="question_{{key}}">{{row}}</label>
+                </li>
+            </ul> 
+            <input type="hidden" name="jform[time]" value="{{data.time}}"  />
+            <input type="hidden" name="jform[id]" value="{{data.id}}"  />
+            <button class="sendBtn" ng-click="save()"></button>
+    </div>
+    </form>
+</div>
+<style>
+body{ background-color:#f7f7f7;}
+.mainWrapper{ background:none; min-height:0; height: auto;}
+
+</style>

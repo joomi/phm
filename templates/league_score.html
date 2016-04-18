@@ -1,0 +1,165 @@
+<div data-role="page" class="league_page leagueDefaultPage score_page gift_page">
+    <ng-include src="'templates/header.html'"></ng-include>
+    <div data-role="content" data-theme="a">
+        <div class="contentWrapper">
+            <div class="league_content">
+                <h2 class="mainTitle">כמה צברתי עד כה?</h2>
+
+
+
+                <!--knowledge-->
+					<ul ng-if="data.knowledge != null">
+						<li class="knowledge_score active" ng-repeat="know in data.knowledge" ng-if="know.knowledge.score && know.knowledge.score != 0 && know.active == 1">
+							<div class="icon knowledgeIcon floatRight"></div>
+							<ul class="tableContainer floatRight">
+								<li>
+									<span>תאריך:</span>
+								</li>
+								<li>
+									<span class="start">{{know.start | date:'dd.MM'}} - {{know.end | date:'dd.MM'}}</span>
+								</li>
+								<div class="clear"></div>
+								<li>
+									<span>ניקוד:</span>
+								</li>
+								<li class="scoreContainer">
+									<span class="score">{{know.knowledge.score}}</span>
+								</li>
+							</ul>
+							<div class="clear"></div>
+						</li>
+
+
+
+						<li class="knowledge_score" ng-repeat="know in data.knowledge" ng-if="know.knowledge.score && know.knowledge.score != 0 && know.active == 0">
+							<div class="icon knowledgeIcon floatRight"></div>
+							<ul class="tableContainer floatRight">
+								<li>
+									<span>תאריך:</span>
+								</li>
+								<li>
+									<span class="start">{{know.start | date:'dd.MM'}} - {{know.end | date:'dd.MM'}}</span>
+								</li>
+								<div class="clear"></div>
+								<li>
+									<span>ניקוד:</span>
+								</li>
+								<li class="scoreContainer">
+									<span class="score">{{know.knowledge.score}}</span>
+								</li>
+							</ul>
+							<div class="clear"></div>
+						</li>
+					</ul>
+
+
+
+
+<!--messages-->
+				<div ng-if="message_score != 0">
+					<ul ng-if="data.messages != null">
+					
+						<li class="messages_score active" ng-repeat="message in data.messages" ng-if="message_score != 0 && message.active == 1">
+							<div class="icon messageIcon floatRight"></div>
+							<ul class="tableContainer floatRight">
+								<li>
+									<span>תאריך:</span>
+								</li>
+								<li>
+									<span class="start">{{message.start | date:'dd.MM'}} - {{message.end | date:'dd.MM'}}</span>
+								</li>
+								<div class="clear"></div>
+								<li>
+									<span>ניקוד:</span>
+								</li>
+								<li class="scoreContainer">
+									<span class="score">{{message_score}}</span>
+								</li>
+							</ul>
+							<div class="clear"></div>
+						</li>
+						
+						<li class="messages_score" ng-repeat="message in data.messages" ng-if="message_score != 0 && message.active == 0">
+							<div class="icon messageIcon floatRight"></div>
+							<ul class="tableContainer floatRight">
+								<li>
+									<span>תאריך:</span>
+								</li>
+								<li>
+									<span class="start">{{message.start | date:'dd.MM'}} - {{message.end | date:'dd.MM'}}</span>
+								</li>
+								<div class="clear"></div>
+								<li>
+									<span>ניקוד:</span>
+								</li>
+								<li class="scoreContainer">
+									<span class="score">{{message_score}}</span>
+								</li>
+							</ul>
+							<div class="clear"></div>
+						</li>
+					</ul>
+				</div>
+
+
+
+
+
+                <!--sales-->
+				<div ng-if="data.sales.sale.score != 0">
+					<ul ng-if="data.sales.sale != null">
+						<li class="sales_score active" ng-if="data.sales.sale.score != '0' && data.sales.active == 1">
+							<div class="icon saleIcon floatRight"></div>
+							<ul class="tableContainer floatRight">
+								<li>
+									<span>תאריך:</span>
+								</li>
+								<li>
+									<span class="start">{{data.sales.sale.start_date | date:'dd.MM'}} -  {{data.sales.sale.end_date | date:'dd.MM'}}</span>
+								</li>
+								<div class="clear"></div>
+								<li>
+									<span>ניקוד:</span>
+								</li>
+								<li class="scoreContainer">
+									<span class="score">{{data.sales.sale.score}}</span>
+								</li>
+							</ul>
+							<div class="clear"></div>
+						</li>
+
+
+						<li class="sales_score" ng-if="data.sales.sale.score != '0' && data.sales.active == 0">
+							<div class="icon saleIcon floatRight"></div>
+							<ul class="tableContainer floatRight">
+								<li>
+									<span>תאריך:</span>
+								</li>
+								<li>
+									<span class="start">{{data.sales.sale.start_date | date:'dd.MM'}} - {{data.sales.sale.end_date | date:'dd.MM'}}</span>
+								</li>
+								<div class="clear"></div>
+								<li>
+									<span>ניקוד:</span>
+								</li>
+								<li class="scoreContainer">
+									<span class="score">{{data.sales.sale.score}}</span>
+								</li>
+							</ul>
+							<div class="clear"></div>
+						</li>
+					</ul>
+				</div>
+
+
+
+                <div class="total">
+                    <span class="pointStatic">
+                                     הנקודות שלי:
+                    </span>
+                    <span class="pointDynamic">{{total}} נקודות</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

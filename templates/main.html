@@ -1,0 +1,44 @@
+<div data-role="page" class="main_page leagueDefaultPage">
+    <ng-include src="'templates/header2.html'"></ng-include>
+    <div data-role="content" data-theme="a">
+        <div class="contentWrapper">
+            <div class="topSection">
+                <div id="cntdwn" class="ClockMain" ng-bind-html="DisplayStr"></div>
+				<div class="assigns">
+					<div class="filter" ng-if="data.type != 4"></div>
+					<div class="filter active" ng-if="data.type == 4">
+						<a href="#/filter"></a>
+					</div>
+                	<!-- <div class="knowledge" ng-if="data.type != 1 && data.type != 4"></div>
+                	<div class="knowledge active" ng-if="data.type == 1 && data.type != 4">
+						<a href="#/league/knowledge"></a>
+					</div> -->
+					<div class="info" ng-if="data.type != 2"></div>
+                	<div class="info active" ng-if="data.type == 2">
+						<a href="#/league/messages"></a>
+					</div>
+					<div class="sales" ng-if="data.type != 3"></div>
+                	<div class="sales active" ng-if="data.type == 3">
+						<a href="#/league/sales"></a>
+					</div>
+                	<div class="filter" ng-if="data.type == 4">
+						<a href="#/filter"></a>
+					</div>
+                </div>
+                <div class="clear"></div>
+            </div>
+            <div class="main_content">
+                <a href="#/about" class="about"></a>
+                <a href="#/keys" class="keys"></a>
+                <!--<a href="#/league/1" class="league"></a>-->
+                <a href="#/b_data/top_five" class="b_data"></a>
+                <a href="#/b_content" class="b_content"></a>
+                <a href="#/gallery/item/126" class="pix"></a>
+                <div class="clear"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<style>
+body{ margin-bottom:0; height:100%; }
+</style>

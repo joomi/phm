@@ -1,0 +1,25 @@
+<div data-role="page" class="yearPage">
+    <ng-include src="'templates/header.html'"></ng-include>
+    <div data-role="content" class="business_data_page" data-theme="a">
+        <div class="contentWrapper">
+            <div class="league_content" ng-if="data">
+                <h2 class="mainTitle">דוח מכירות שנתי</h2>
+                <div class="months dateWrapper">
+                    <span class="dateElement">{{data.date}}</span>
+                </div>
+                <div class="contents graphContainer year" ng-if="data.values">
+                    <div id="chart_div" year-chart="values"></div>
+                </div>
+            </div>
+			<div class="league_content" ng-if="!data">
+                <h2 class="mainTitle">דוח מכירות שנתי</h2>
+                
+				<div style="padding:30px; text-align:center">
+                    לא נמצאו מוצרים
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

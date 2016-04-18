@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en" ng-app="phmApp">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <title>Contact</title>
+    <link rel="stylesheet" href="css/template.css">
+    <script language="javascript">
+    var Jbase = 'http://www.mycontact.co.il/';
+    </script>
+</head>
+<body style="background:url(splash.png) 50% 50% no-repeat;">
+    <ng-include src="footerUrl()" ng-if="hideFooter !== true"></ng-include>
+    <nav id="menu">
+        <ul>
+            <li class="linx"><a href="#/contact" close-menu>צור קשר</a></li>
+            <li class="linx"><a href="#/main" close-menu>מסך ראשי</a></li>
+            <li class="about"><a ng-href="#/about" close-menu> </a></li>
+            <li class="keys"><a ng-href="#/keys" close-menu> </a></li>
+            <!--<li class="see"><a ng-href="#/league/1" close-menu> </a></li>-->
+            <li class="bizData"><a ng-href="#/b_data/top_five" close-menu> </a></li>
+            <li class="bizContent"><a ng-href="#/b_content" close-menu> </a></li>
+            <li class="pix"><a ng-href="#/gallery/item/126" close-menu> </a></li>
+        </ul>
+    </nav>
+    <div ng-view class="mainWrapper menu-slideout-transition" menu-slideout></div>
+
+    <div id="overlay" class="{{dispOverlay}}"></div>
+    <script src="lib/jquery/jquery-1.10.2.min.js"></script>  
+    <script src="lib/angular/angular.min.js"></script>
+    <script src="js/cycle2.js"></script>  
+    <script src="js/fastclick.js"></script>  
+    <script src="js/controllers.js"></script>
+    <script src="js/app.js"></script>
+    <script src="lib/google/jsapi.js"></script>    
+	<script type="text/javascript">
+    google.load('visualization', '1', {packages: ['corechart']});
+	$(document).ready(function(){
+		$('body').css({background:'none'});
+	});
+    </script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<div data-role="page" class="yearPage">
+    <ng-include src="'templates/header.html'"></ng-include>
+    <div data-role="content" class="business_data_page contactPage" data-theme="a">
+        <div class="contentWrapper">
+            <div class="contactus">
+            	<h2>לנוחיותך, טלפונים שימושיים ליצירת קשר:</h2>
+				<ul>
+                	<li class="left" ng-if="data.sales_promoter">{{data.sales_promoter}}</li>
+                	<li ng-if="data.sales_promoter"><strong><a href="tel:{{data.sales_promoter_phn}}">{{data.sales_promoter_phn}}</a></strong></li>
+					
+                	<li class="left" ng-if="data.seller_name">{{data.seller_name}}</li>
+                	<li ng-if="data.seller_name"><strong><a href="tel:{{data.seller_name_phn}}">{{data.seller_name_phn}}</a></strong></li>
+					
+                	<li class="left" ng-if="data.territory_manager">{{data.territory_manager}}</li>
+                	<li ng-if="data.territory_manager"><strong><a href="tel:{{data.territory_manager_phn}}">{{data.territory_manager_phn}}</a></strong></li>
+                    <li class="left">שירות לקוחות</li>
+                    <li><strong class="blue"><a href="tel:1-800-355-555">1-800-355-555</a></strong></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<style>
+body{ margin-bottom:0; height:100%}
+</style>

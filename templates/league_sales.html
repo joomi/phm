@@ -1,0 +1,85 @@
+<div data-role="page" class="league_page">
+    <ng-include src="'templates/header.html'"></ng-include>
+    <div data-role="content" data-theme="a">
+        <div class="contentWrapper">
+        	<div class="topTitles">
+            	<h2>מכירות</h2>
+                <div class="dates"> {{data.0.start | date:'dd.MM.yyyy'}} - {{data.0.end | date:'dd.MM.yyyy'}}</div>
+            </div>
+            <div class="league_content leagueSalesPage" ng-if="data">
+				<h2 class="mainTitle">
+                    נתונים
+                </h2>
+
+
+                <div class="width100">
+                    <div class="floatLeft leftSpriteClockContainer width60">
+                        <div id="cntdwn" class="backgroundSize100 backgroundClockLeague" ng-bind-html="DisplayStr"></div>
+                    </div>
+
+                    <div class="rightSpriteLogoContainer floatRight width40">
+                         <div class="backgroundIconLeague"></div>
+                     </div>
+                </div>
+
+
+
+				<div class="clear"></div>
+
+                <div class="tableContainer floatRight" ng-if="data">
+
+
+                    <ul class="tableRow bold headline noBullet width100 floatRight" >
+                        <li>משפחה</li>
+                        <li>יעד</li>
+                        <li>צברתי</li>
+                        <li>יתרה</li>
+                    </ul>
+                    <div  ng-if="data">
+                        <ul ng-if="data.0.family_title !== ''" class="tableRow noBullet width100 floatRight" >
+                            <li>{{data.0.family_title}}</li>
+                            <li>{{family_goal}}</li>
+                            <li>{{family_sells}}</li>
+                            <li ng-if="(family_goal - family_sells) >= 0">{{family_goal - family_sells}}</li>
+                            <li ng-if="(family_goal - family_sells) < 0">0</li>
+                        </ul>
+                        <ul ng-if="data.0.p1_title !== ''" class="tableRow noBullet width100 floatRight" >
+                            <li>{{data.0.p1_title}}</li>
+                            <li>{{p1_goal}}</li>
+                            <li>{{p1_sells}}</li>
+                            <li ng-if="(p1_goal - p1_sells) >= 0">{{p1_goal - p1_sells}}</li>
+							<li ng-if="(p1_goal - p1_sells) < 0">0</li>
+                        </ul>
+                        <ul ng-if="data.0.p2_title !== ''" class="tableRow noBullet width100 floatRight" >
+                            <li>{{data.0.p2_title}}</li>
+                            <li>{{p2_goal}}</li>
+                            <li>{{p2_sells}}</li>
+                            <li ng-if="(p2_goal - p2_sells) >= 0">{{p2_goal - p2_sells}}</li>
+							<li ng-if="(p2_goal - p2_sells) < 0">0</li>
+                        </ul>
+                        <ul ng-if="data.0.p3_title !== ''" class="tableRow noBullet width100 floatRight" >
+                            <li>{{data.0.p3_title}}</li>
+                            <li>{{p3_goal}}</li>
+                            <li>{{p3_sells}}</li>
+                            <li ng-if="(p3_goal - p3_sells) >= 0">{{p3_goal - p3_sells}}</li>
+							<li ng-if="(p3_goal - p3_sells) < 0">0</li>
+                        </ul>
+
+                    <ul class="tableRow finalRow noBullet width100 floatRight" >
+                        <li>סה"כ הנקודות</li>
+                        <li>{{family_sells + p1_sells + p2_sells + p3_sells}}</li>
+                    </ul>
+                 </div>
+
+
+                </div>
+                <div class="clear"></div>
+
+            </div>
+			<div class="league_content leagueSalesPage" style="  padding-top: 40px;
+  text-align: center;" ng-if="!data">
+				לא נמצאות נתונים להצגה
+			</div>
+        </div>
+    </div>
+</div>

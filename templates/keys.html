@@ -1,0 +1,53 @@
+<div data-role="page" class="keyPage">
+    <ng-include src="'templates/header.html'"></ng-include>
+    <div data-role="content" data-theme="a" class="business_data_page paddingTop1P">
+        <div class="contentWrapper">
+        	<div class="mainTitle">
+            	<h2>מפתחות להצלחה</h2>
+            </div>
+            <div class="key_items" style="margin-bottom:-1px;" ng-if="data">
+                <div class="key_header">
+                    <div class="borderWrapper">
+                        <div class="headerItem count1">תאריך</div>
+                    </div>
+
+                    <div class="borderWrapper">
+                        <div class="headerItem count2">מגוון של 32 מוצרים לפחות</div>
+                    </div>
+
+                    <div class="borderWrapper">
+                        <div class="headerItem count3">זמינות של 8 מוצרים + 2 ע"פ בקשת החברה</div>
+                    </div>
+
+                    <div class="borderWrapper">
+                        <div class="headerItem count4">הסכמה לפעילות שיווקית בנקודת המכירה</div>
+                    </div>
+
+                    <!--<div class="borderWrapper">-->
+                        <!--<div class="headerItem count5">הסכמה להעברת מידע</div>-->
+                    <!--</div>-->
+                    <div class="clear"></div>
+                </div>
+                <div class=" keyBottomBorder"></div>
+                <div class="key_rows" ng-repeat="key in data">
+                    <div class="rowItem first">
+                        <span>
+                        {{key.date | date:'dd.MM.yy'}}
+                        </span>
+                    </div>
+                        <div class="rowItem">
+                            <span class="icon{{key.availability}}"></span>
+                        </div>
+                    <div class="rowItem"><span class="icon{{key.variability}}"></span></div>
+                    <div class="rowItem"><span class="icon{{key.agree_to_info}}"></span></div>
+                    <!--<div class="rowItem"><span class="icon{{key.agree_to_publication}}"></span></div>-->
+                    <div class="clear"></div>
+                </div>
+            </div>
+            <div class="key_items" style="margin-bottom:-1px;padding: 47% 8%;text-align: center;" ng-if="data.0 == null">לא קיימים נתונים להצגה</div>
+        </div>
+    </div>
+</div>
+<style>
+body{ margin-bottom:0; height:100%}
+</style>

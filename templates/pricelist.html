@@ -1,0 +1,47 @@
+<div data-role="page" class="keyPage pricelist">
+    <ng-include src="'templates/header.html'"></ng-include>
+    <div data-role="content" data-theme="a" class="business_data_page paddingTop1P">
+        <div class="contentWrapper">
+        	<div class="mainTitle">
+            	<h2>{{data.title}}</h2>
+            </div>
+            <div class="key_items">
+                <div class="key_header">
+                    <div class="borderWrapper">
+                        <div class="headerItem count1">משפחה / מוצר</div>
+                    </div>
+
+                    <div class="borderWrapper">
+                        <div class="headerItem count2">מחיר לקמעונאי ללא מע"מ לקרטוש</div>
+                    </div>
+
+                    <div class="borderWrapper">
+                        <div class="headerItem count3">מחיר לקמעונאי כולל מע"מ לקרטוש</div>
+                    </div>
+
+                    <div class="borderWrapper">
+                        <div class="headerItem count4">מחיר מומלץ לצרכן לחפיסה</div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <div class="clear keyBottomBorder"></div>
+            	<ul class="categoryList" ng-repeat="category in data.subCategories">
+                	<li class="catName">
+                    	<h3>{{category.subCategory_name}}</h3>
+                    	<table class="itemList" width="100%" border="0" cellpadding="3" cellspacing="2">
+                        	<tr ng-repeat="items in category.subCategory_items">
+                                <td class="first"><span></span></td>
+                                <td class="second">{{items.title}}</td>
+                                <td>{{items.ex_22}}</td>
+                                <td>{{items.ex_23}}</td>
+                                <td>{{items.ex_24}}</td>
+                            </tr>
+                        </table>
+                    </li>
+                    
+                </ul>
+        </div>
+    </div>
+</div>
+
+

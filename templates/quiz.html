@@ -1,0 +1,37 @@
+<div data-role="page" class="league_page pageQuiz">
+    <ng-include src="'templates/header.html'"></ng-include>
+    <div data-role="content" data-theme="a">
+        <div class="contentWrapper">
+
+        	<div class="long topTitles noDate">
+            	<h2>שאלון ידע</h2>
+                <div class="dates"></div>
+            </div>
+            <div class="league_content">
+				<h2 class="mainTitle">ענו על השאלות הבאות:</h2>
+                <div class="data">
+                	<form name="quiz_form" ng-controller="QuizFormCtrl">
+                        <ul class="noBullet quistions">
+                            <li ng-repeat="row in data.questions">
+                                <ul class="noBullet questionSingle">
+                                    <li>{{row.question}}</li>
+                                    <ul class="noBullet radios">
+                                        <li ng-repeat="(key,option) in row.options" class="radiobutton">
+                                        	<input type="radio" name="jform[question][{{option.num}}]" id="question_{{option.num}}_{{key}}" value="{{key+1}}" />
+                                            <label for="question_{{option.num}}_{{key}}">{{option.option}}</label>
+                                        </li>
+                                    </ul>
+                                </ul>
+                            </li>
+                        </ul> 
+                        <input type="hidden" name="jform[st]" value="{{data.time}}"  />
+                        <input type="hidden" name="jform[id]" value="{{data.id}}"  />
+                    	<button class="sendBtn" ng-click="save()"></button>
+                    </form>
+                    <div class="message">{{message}}</div>               	
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+ 

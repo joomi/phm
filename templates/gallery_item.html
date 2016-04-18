@@ -1,0 +1,18 @@
+<div data-role="page" class="yearPage">
+    <ng-include src="'templates/header.html'"></ng-include>
+    <div data-role="content" class="business_data_page cataloguePage item" data-theme="a">
+        <div class="contentWrapper">
+            <h2 class="mainTitle">גלריה</h2>
+            <div class="catalogue_category">
+            	<h3 style="margin-bottom:0;">{{data.title}}</h3>
+                <div class="galleryHolder">
+                	<a id="leftGal"></a>
+                    <div id="gallery">
+                        {{initImg}}
+                    </div>
+                    <a id="rightGal"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

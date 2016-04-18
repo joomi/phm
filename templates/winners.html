@@ -1,0 +1,38 @@
+<div data-role="page" class="yearPage">
+    <ng-include src="'templates/header.html'"></ng-include>
+    <div data-role="content" class="business_data_page cataloguePage winners" ng-if="data">
+        <div class="contentWrapper">
+            <h2 class="mainTitle">הזוכים</h2>
+            <div class="h-buttons">
+                <span class="sort_title">מיין לפי:</span>
+                <a href="" class="sort_btn" id="sort_by_abc" ng-click="reverse=!reverse;order('name',reverse)">א'-ב'</a>
+                <a href="" class="sort_btn" id="sort_by_place" ng-click="reverse=!reverse;order('place',reverse)">מיקום בליגה</a>
+            </div>
+            <div data-role="content" >
+                <ul class="header_line">
+                    <li class="name">שם נקודת המכירה</li>
+                    <li class="city">עיר</li>
+                    <li class="place">מקום</li>
+                    <li class="clear"></li>
+                </ul>
+                <ul class="winner" ng-repeat="item in data" ng-if="item.name">
+                    <li class="first">
+                        {{item.name}}
+                    </li>
+                    <li class="second">
+                        {{item.city}}
+                    </li>
+                    <li class="third">
+                        {{item.place}}
+                    </li>
+                    <li class="clear"></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div data-role="content" class="{{comming_soon}}" ng-if="!data"></div>
+</div>
+
+<style>
+html,body,.mainWrapper ,.aboutPage,.yearPage { height:100%; padding-bottom:0}
+</style>

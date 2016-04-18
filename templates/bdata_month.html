@@ -1,0 +1,27 @@
+<div data-role="page" class="monthPage ">
+    <ng-include src="'templates/header.html'"></ng-include>
+    <div data-role="content" class="business_data_page" data-theme="a">
+        <div class="contentWrapper ">
+            <div class="league_content">
+				<h2 class="mainTitle">דוח מכירות חודש אחרון לפי משפחות</h2>
+                <div class="months dateWrapper">
+                	<a class="leftArrow" href="#/b_data/month/{{data.prev}}"></a>
+                    <span class="dateElement" ng-if="data.date != null">{{data.date}}</span>
+                    <span class="dateElement" ng-if="data.date == null">טוען נתונים חודשיים</span>
+                	<a  class="rightArrow" href="#/b_data/month/{{data.next}}"></a>
+                </div>
+                <div class="contents graphContainer month" ng-if="data.values">
+                	<div id="chart_div" month-chart="values"></div>
+                </div>
+                <div class="contents graphContainer month" ng-if="data.values == null">
+                	<p style="text-align:center">לא קיימים נתונים לחודש זה</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+

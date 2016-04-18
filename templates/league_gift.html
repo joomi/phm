@@ -1,0 +1,115 @@
+<div data-role="page" class="league_page gift_page">
+    <ng-include src="'templates/header.html'"></ng-include>
+    <div data-role="content" data-theme="a">
+        <div class="contentWrapper">
+            <div class="topMenu contentCategoriesGift">
+                <div class="paddingContainer">
+                    <div class="opacityContainer width100"></div>
+                    <ul class="categoryList noBullet width100">
+                        <li ng-if="data.category == 1" class="active"><a href="#/league/gifts/1">ספורט</a></li>
+                        <li ng-if="data.category != 1"><a href="#/league/gifts/1">ספורט</a></li>
+                        <li ng-if="data.category == 2" class="active"><a href="#/league/gifts/2">אקסטרים</a></li>
+                        <li ng-if="data.category != 2"><a href="#/league/gifts/2">אקסטרים</a></li>
+                        <li ng-if="data.category == 3" class="active"><a href="#/league/gifts/3">נופש</a></li>
+                        <li ng-if="data.category != 3"><a href="#/league/gifts/3">נופש</a></li>
+                        <li ng-if="data.category == 4" class="active"><a href="#/league/gifts/4">בידור</a></li>
+                        <li ng-if="data.category != 4"><a href="#/league/gifts/4">בידור</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="league_content">
+
+                <div class="mainTitleGift">
+                    <h2>{{data.title}} </h2>
+                </div>
+
+                <!--no intro here - skip it from the design-->
+                <img class="resizeImage" src="{{base}}{{data.full_img}}"/>
+
+
+                <div class="textInfoHolder">
+                    <span class="textInfo">לזוכים במיקום : </span>
+                    <span class="greenText first">{{place}}</span>
+                    <span class="textInfo">קטגוריה : </span>
+                    <span class="greenText">{{category}}</span>
+                </div>
+
+
+                <div class="pHolder">{{data.intro}}</div>
+                <a ng-click="openOrder()" class="linkBtn" ng-if="data.btn == 1"></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div style="display:none" id="order_container" ng-if="data.btn == 1">
+    <div>
+        <h1>ברכות עם סיום פעילות הליגה!</h1>
+        <h2 class="hidethis2">להשלמת ההזמנה וקבלת המתנה לביתך,  אנא מלא את פרטייך</h2>
+        <form id="orderForm" method="post" ng-controller="orderSubmitCtrl">
+			<div id="hidethisform">
+				<div class="formBlock1">
+					<ul>
+						<li>
+							<span class="astrix">*</span>
+							<input type="text" placeholder="שם פרטי:" name="jform[user][first_name]" id="first_name" class="required" />
+						</li>
+						<li>
+							<span class="astrix">*</span>
+							<input type="text" placeholder="שם משפחה:" name="jform[user][family_name]" id="family_name" class="required" />
+						</li>
+						<li>
+							<span class="astrix">*</span>
+							<input type="number" placeholder="טלפון נייד:" name="jform[user][cell_phone]" id="cell_phone" class="required" />
+						</li>
+						<li>
+							<span class="astrix"> </span>
+							<input type="number" placeholder="טלפון נוסף:" name="jform[user][phone_2]" id="phone_2" />
+						</li>
+						<li>
+							<span class="astrix"> </span>
+							<input type="text" placeholder="שם איש קשר לבירורים:" name="jform[user][contact_name]" id="contact_name" />
+						</li>
+						<li>
+							<span class="astrix"> </span>
+							<input type="text" placeholder="שם מקבל המתנה:" name="jform[user][name_of_receiver]" id="name_of_receiver" /> 
+						</li>
+						<li class="clear" style="float:none"></li>
+					</ul>
+				</div>
+				<h3>כתובת נקודת המכירה:</h3>
+				<div class="formBlock1">
+					<ul>
+						<li>
+							<span class="astrix">*</span>
+							<input type="text" placeholder="רחוב:" name="jform[user][street]" id="street" class="required" />
+						</li>
+						<li>
+							<span class="astrix">*</span>
+							<input type="number" placeholder="מספר בית:" name="jform[user][house_num]" id="house_num" class="required" />
+						</li>
+						<li>
+							<span class="astrix"> </span>
+							<input type="text" placeholder="כניסה/קומה:" name="jform[user][floor]" id="floor" />
+						</li>
+						<li>
+							<span class="astrix">*</span>
+							<input type="text" placeholder="עיר:" name="jform[user][city]" id="city" class="required" />
+						</li>
+						<li class="clear" style="float:none"></li>
+					</ul>
+				</div>
+				<input type="hidden" name="jform[league]" value="{{data.league}}"  />
+				<input type="hidden" name="jform[code]" value="{{data.code}}"  />
+				<input type="hidden" name="jform[gift]" value="{{data.id}}"  />
+				<input type="hidden" name="jform[gift_name]" value="{{data.title}}"  />
+				<input type="hidden" name="jform[gift_category]" value="{{category}}"  />
+				<input type="button" class="orderSubmit" value=" " ng-click="save()"  />
+            </div>
+			<span class="message">{{message}}</span>
+            <div class="clear"></div>
+        </form>
+    </div>
+</div>
+<a ng-click="closeLb()" style="display:none;" id="closeLb"></a>

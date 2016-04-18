@@ -1,0 +1,11 @@
+<footer class="league_footer">
+	<a ng-if="activeFooter == 'gift'" class="gifts active" href="#/league/gifts/1" title="מתנות"></a>
+	<a ng-if="activeFooter != 'gift'" class="gifts" href="#/league/gifts/1" title="מתנות"></a>
+	<a ng-if="activeFooter == 'score'" class="score active" href="#/league/score/1" title="צבירת נקודות"></a>
+	<a ng-if="activeFooter != 'score'" class="score" href="#/league/score/1" title="צבירת נקודות"></a>
+	<a ng-if="activeFooter == 'activity'" class="activity active" href="#/activity" title="פעילות הליגה"></a>
+	<a ng-if="activeFooter != 'activity'" class="activity" href="#/activity" title="פעילות הליגה"></a>
+	<a ng-if="activeFooter == 'league'" class="league active" href="#/league/1" title="שיא השיאים"></a>
+	<a ng-if="activeFooter != 'league'" class="league" href="#/league/1" title="שיא השיאים"></a>
+    <div class="clear"></div>
+</footer>

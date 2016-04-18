@@ -1,0 +1,44 @@
+<div data-role="page" class="league_page messagesPage">
+    <ng-include src="'templates/header.html'"></ng-include>
+    <div data-role="content" data-theme="a">
+        <div class="contentWrapper">
+            <div class="long topTitles">
+                <h2>העברת מידע</h2>
+
+                <div class="dates"> {{data.start | date:'dd.MM.yyyy'}} - {{data.end | date:'dd.MM.yyyy'}}</div>
+            </div>
+            <div class="league_content">
+                <h2 class="mainTitle">
+                    סיכום פעילות
+                </h2>
+
+                <div class="width100">
+                    <div class="floatLeft leftSpriteClockContainer width60">
+                        <div id="cntdwn" class="backgroundClockLeague" ng-bind-html="DisplayStr"></div>
+                    </div>
+
+                    <div class="rightSpriteLogoContainer floatRight width40">
+                        <div class="backgroundIconLeague"></div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <div class="data" style="padding-bottom:30px;">
+                    <ul class="messagePageUl noBullet" ng-if="data.total > 0">
+                        <li class="header"><span>מספר נקודות</span></li>
+                        <li class="header"><span>תאריך ביקור</span></li>
+                        <ul class="noPadding" ng-repeat="message in data.values">
+                            <li class="textAlignRight"><span>{{message.key}}</span></li>
+                            <li><span>{{message.value}}</span></li>
+                        </ul>
+                        <li class="bottom textAlignRight gradsCell"><span>{{data.total}}</span></li>
+                        <li class="bottom textAlignRight allTotalCell"><span>סה"כ</span></li>
+                    </ul>
+					<p ng-if="data.total == 0">אין כרגע מידע אודות פעילות העברת מסרים</p>
+                    <div class="clear"></div>
+                    <!--<div class="message floatRight textAlignRight">* ציון מקסימלי לביקור</div>
+                    <div class="clear"></div>-->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

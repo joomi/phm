@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<widget xmlns = "http://www.w3.org/ns/widgets"
+		xmlns:gap = "http://phonegap.com/ns/1.0"
+		id        = "com.contact.phm"
+		versionCode="33"
+		version   = "33">
+		<name>Contact</name>
+		<description>
+		</description>
+		<author href="www.joomi.co.il" email="shay@joomi.co.il">
+Shay Zalman
+		</author>
+		
+		<preference name="permissions" value="none"/>
+
+	<preference name="phonegap-version" value="cli-5.2.0" />
+		<preference name="orientation" value="portrait" />
+		<preference name="target-device" value="handset" />
+		<preference name="fullscreen" value="false" />
+		<preference name="webviewbounce" value="true" />
+		<preference name="prerendered-icon" value="true" />
+		<preference name="stay-in-webview" value="true" />
+		<preference name="ios-statusbarstyle" value="default" />
+		<preference name="detect-data-types" value="true" />
+		<preference name="exit-on-suspend" value="false" />
+		<preference name="show-splash-screen-spinner" value="true" />
+		<preference name="auto-hide-splash-screen" value="true" />
+		<preference name="disable-cursor" value="true" />
+		<preference name="android-minSdkVersion" value="7" />
+		<preference name="android-maxSdkVersion" value="17" />
+		<preference name="android-installLocation" value="auto" />
+		<preference name="splash-screen-duration" value="2" />
+		<preference name="load-url-timeout" value="0" />
+		<icon src="images/app_icons/ios/icon_57.png" gap:platform="ios" width="57" height="57" />
+		<icon src="images/app_icons/ios/icon_72.png" gap:platform="ios" width="72" height="72" />
+		<icon src="images/app_icons/ios/icon_114.png" gap:platform="ios" width="114" height="114" />
+		<icon src="images/app_icons/ios/icon_144.png" gap:platform="ios" width="144" height="144" />
+		<icon src="images/app_icons/android/icon_36.png" gap:platform="android" gap:density="ldpi" />
+		<icon src="images/app_icons/android/icon_42.png" gap:platform="android" gap:density="mdpi" />
+		<icon src="images/app_icons/android/icon_72.png" gap:platform="android" gap:density="hdpi" />
+		<icon src="images/app_icons/android/icon_96.png" gap:platform="android" gap:density="xhdpi" />
+		
+		<gap:splash src="splash.png" />
+		<gap:splash src="images/splash/ios/spl_320.png" width="320" height="480" />
+		<gap:splash src="images/splash/ios/spl_640.png" width="640" height="960" />
+		<gap:splash src="images/splash/android/spl_320.png" gap:platform="android" gap:density="mdpi" />
+		<gap:splash src="images/splash/android/spl_480.png" gap:platform="android" gap:density="hdpi" />
+
+		<preference name="com.urbanairship.production_app_key" value="ZOW7fzyUR42o5LRDOEscUA" />
+		<preference name="com.urbanairship.production_app_secret" value="zQ1s_m0dT46CLYJU8btJsQ" />
+		<preference name="com.urbanairship.development_app_key" value="1YCOiSlKQdaF2fr5LWkN1w" />
+		<preference name="com.urbanairship.development_app_secret" value="hmRGaV_rQTi_Z43ABQ7_dg" />
+		<preference name="com.urbanairship.in_production" value="true" />
+		<preference name="com.urbanairship.gcm_sender" value="951843911803" />
+
+		<access origin="*" browserOnly="true" />
+		<allow-navigation href="*" />
+		<allow-intent href="http://*/*" />
+		<allow-intent href="https://*/*" />
+		<gap:plugin name="cordova-plugin-whitelist" source="npm" />
+	</widget>

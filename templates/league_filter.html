@@ -1,0 +1,120 @@
+<div data-role="page" class="league_page pageQuiz">
+    <ng-include src="'templates/header.html'"></ng-include>
+    <div data-role="content" data-theme="a">
+        <div class="contentWrapper">
+
+        	<div class="long topTitles">
+            	<h2>פעילות סנן</h2>
+                <div class="dates">
+					{{data.assign.start_date | date:'dd.MM.yyyy'}} - {{data.assign.end_date | date:'dd.MM.yyyy'}}
+				</div>
+            </div>
+			<div class="league_content knowlagePageTable">
+				<div class="league_content">
+					<div class="data">
+						<div class="story" ng-bind-html="story"></div>
+						<div class="grid_image_wrapper">
+							<img src="{{base}}{{data.filter.grid_image}}" />
+							<form id="quizfilter">
+							<input type="radio" value="1" name="jform[a1]" id="row_1col_1" class="row_1 col_1" />
+							<input type="radio" value="1" name="jform[a2]" id="row_1col_2" class="row_1 col_2" />
+							<input type="radio" value="1" name="jform[a3]" id="row_1col_3" class="row_1 col_3" />
+							<input type="radio" value="1" name="jform[a4]" id="row_1col_4" class="row_1 col_4" />
+							<input type="radio" value="1" name="jform[a5]" id="row_1col_5" class="row_1 col_5" />
+							<input type="radio" value="1" name="jform[a6]" id="row_1col_6" class="row_1 col_6" />
+							<input type="radio" value="1" name="jform[a7]" id="row_1col_7" class="row_1 col_7" />
+							<input type="radio" value="1" name="jform[a8]" id="row_1col_8" class="row_1 col_8" />
+							<input type="radio" value="1" name="jform[a9]" id="row_1col_9" class="row_1 col_9" />
+							<input type="radio" value="1" name="jform[b1]" id="row_2col_1" class="row_2 col_1" />
+							<input type="radio" value="1" name="jform[b2]" id="row_2col_2" class="row_2 col_2" />
+							<input type="radio" value="1" name="jform[b3]" id="row_2col_3" class="row_2 col_3" />
+							<input type="radio" value="1" name="jform[b4]" id="row_2col_4" class="row_2 col_4" />
+							<input type="radio" value="1" name="jform[b5]" id="row_2col_5" class="row_2 col_5" />
+							<input type="radio" value="1" name="jform[b6]" id="row_2col_6" class="row_2 col_6" />
+							<input type="radio" value="1" name="jform[b7]" id="row_2col_7" class="row_2 col_7" />
+							<input type="radio" value="1" name="jform[b8]" id="row_2col_8" class="row_2 col_8" />
+							<input type="radio" value="1" name="jform[b9]" id="row_2col_9" class="row_2 col_9" />
+							<input type="radio" value="1" name="jform[c1]" id="row_3col_1" class="row_3 col_1" />
+							<input type="radio" value="1" name="jform[c2]" id="row_3col_2" class="row_3 col_2" />
+							<input type="radio" value="1" name="jform[c3]" id="row_3col_3" class="row_3 col_3" />
+							<input type="radio" value="1" name="jform[c4]" id="row_3col_4" class="row_3 col_4" />
+							<input type="radio" value="1" name="jform[c5]" id="row_3col_5" class="row_3 col_5" />
+							<input type="radio" value="1" name="jform[c6]" id="row_3col_6" class="row_3 col_6" />
+							<input type="radio" value="1" name="jform[c7]" id="row_3col_7" class="row_3 col_7" />
+							<input type="radio" value="1" name="jform[c8]" id="row_3col_8" class="row_3 col_8" />
+							<input type="radio" value="1" name="jform[c9]" id="row_3col_9" class="row_3 col_9" />
+							<input type="radio" value="1" name="jform[d1]" id="row_4col_1" class="row_4 col_1" />
+							<input type="radio" value="1" name="jform[d2]" id="row_4col_2" class="row_4 col_2" />
+							<input type="radio" value="1" name="jform[d3]" id="row_4col_3" class="row_4 col_3" />
+							<input type="radio" value="1" name="jform[d4]" id="row_4col_4" class="row_4 col_4" />
+							<input type="radio" value="1" name="jform[d5]" id="row_4col_5" class="row_4 col_5" />
+							<input type="radio" value="1" name="jform[d6]" id="row_4col_6" class="row_4 col_6" />
+							<input type="radio" value="1" name="jform[d7]" id="row_4col_7" class="row_4 col_7" />
+							<input type="radio" value="1" name="jform[d8]" id="row_4col_8" class="row_4 col_8" />
+							<input type="radio" value="1" name="jform[d9]" id="row_4col_9" class="row_4 col_9" />
+							<input type="radio" value="1" name="jform[e1]" id="row_5col_1" class="row_5 col_1" />
+							<input type="radio" value="1" name="jform[e2]" id="row_5col_2" class="row_5 col_2" />
+							<input type="radio" value="1" name="jform[e3]" id="row_5col_3" class="row_5 col_3" />
+							<input type="radio" value="1" name="jform[e4]" id="row_5col_4" class="row_5 col_4" />
+							<input type="radio" value="1" name="jform[e5]" id="row_5col_5" class="row_5 col_5" />
+							<input type="radio" value="1" name="jform[e6]" id="row_5col_6" class="row_5 col_6" />
+							<input type="radio" value="1" name="jform[e7]" id="row_5col_7" class="row_5 col_7" />
+							<input type="radio" value="1" name="jform[e8]" id="row_5col_8" class="row_5 col_8" />
+							<input type="radio" value="1" name="jform[e9]" id="row_5col_9" class="row_5 col_9" />
+							<input type="radio" value="1" name="jform[f1]" id="row_6col_1" class="row_6 col_1" />
+							<input type="radio" value="1" name="jform[f2]" id="row_6col_2" class="row_6 col_2" />
+							<input type="radio" value="1" name="jform[f3]" id="row_6col_3" class="row_6 col_3" />
+							<input type="radio" value="1" name="jform[f4]" id="row_6col_4" class="row_6 col_4" />
+							<input type="radio" value="1" name="jform[f5]" id="row_6col_5" class="row_6 col_5" />
+							<input type="radio" value="1" name="jform[f6]" id="row_6col_6" class="row_6 col_6" />
+							<input type="radio" value="1" name="jform[f7]" id="row_6col_7" class="row_6 col_7" />
+							<input type="radio" value="1" name="jform[f8]" id="row_6col_8" class="row_6 col_8" />
+							<input type="radio" value="1" name="jform[f9]" id="row_6col_9" class="row_6 col_9" />
+							<?php echo JHtml::_('form.token'); ?>
+							<input type="hidden" name="jform[st]" value="{{data.time}}"  />
+							<input type="hidden" name="jform[id]" value="{{data.id}}"  />
+							<input type="hidden" name="jform[qid]" value="{{data.filter.id}}"  />
+							</form>
+						</div>
+				
+					</div>
+				</div>
+            </div>
+        </div>
+    </div>
+</div>
+<style>
+.grid_image_wrapper{position:relative;width:100%;}
+.grid_image_wrapper img{position:relative;width:100%;top:0;left:0;}
+.grid_image_wrapper input[type=radio]{position:absolute;width:0;height:0; visibility:hidden}
+.grid_image_wrapper label{position:absolute;width:16.6%;height:11.11%;display:block; cursor:pointer}
+.grid_image_wrapper label.col_1{top:0;}
+.grid_image_wrapper label.col_2{top:11.11%;}
+.grid_image_wrapper label.col_3{top:22.22%;}
+.grid_image_wrapper label.col_4{top:33.33%;}
+.grid_image_wrapper label.col_5{top:44.44%;}
+.grid_image_wrapper label.col_6{top:55.55%;}
+.grid_image_wrapper label.col_7{top:66.66%;}
+.grid_image_wrapper label.col_8{top:77.77%;}
+.grid_image_wrapper label.col_9{bottom:0;}
+.grid_image_wrapper label.row_1{left:0px;}
+.grid_image_wrapper label.row_2{left:16.6%;}
+.grid_image_wrapper label.row_3{left:33.3%;}
+.grid_image_wrapper label.row_4{left:49.9%;}
+.grid_image_wrapper label.row_5{left:66.53%;}
+.grid_image_wrapper label.row_6{right:0;}
+ </style>
+ 
+ <script>
+	
+jQuery(document).ready(function($){
+	//var pos = new Array();
+
+	$('.grid_image_wrapper input').each(function(){
+		var id = $(this).attr('id');
+		var classX = $(this).attr('class');
+		$(this).wrap('<label class="'+classX+'" for="'+id+'"></label>')
+	});
+	
+})
+ </script>

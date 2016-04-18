@@ -1,0 +1,30 @@
+<div data-role="page" class="yearPage">
+    <ng-include src="'templates/header.html'"></ng-include>
+    <div data-role="content" class="business_data_page cataloguePage item" data-theme="a">
+        <div class="contentWrapper">
+            <h2 class="mainTitle">קטלוג מוצרים</h2>
+            <div class="catalogue_category" ng-if="data">
+            	<h3>{{data.title}}</h3>
+                <div class="catalogueItem">
+                	<!--<img src="{{base}}{{item.img}}" />-->
+                    <div class="logoHolder" style="background-image:url({{base}}{{data.logo}})"></div>
+                    <div class="imgHolder" style="background-image:url({{base}}{{data.img}})"></div>
+                    <div class="clear"></div>
+                    <h4>מידע:</h4>
+                    <p>{{data.text}}</p>
+                    <ul class="info">
+                    	<li class="title">מחיר לקמעונאי ללא מע"מ לקרטוש:</li>
+                    	<li class="price">{{data.price_no_vat}}</li>
+                    	<li class="title">מחיר לקמעונאי כולל מע"מ לקרטוש:</li>
+                    	<li class="price">{{data.price_with_vat}}</li>
+                    	<li class="title">מחיר מומלץ לצרכן לחפיסה:</li>
+                    	<li class="price">{{data.recom_price}}</li>
+                        <li class="clear"></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

@@ -1,0 +1,12 @@
+<nav id="menu">
+    <ul>
+        <li class="linx"><a href="#/contact" ng-click="toggleMenu()">צור קשר</a></li>
+        <li class="linx"><a href="#/main" ng-click="toggleMenu()">מסך ראשי</a></li>
+        <li class="about"><a ng-href="#/about" ng-click="toggleMenu()"> </a></li>
+        <li class="keys"><a ng-href="#/keys" ng-click="toggleMenu()"> </a></li>
+        <li class="see"><a ng-href="#/league/1" ng-click="toggleMenu()"> </a></li>
+        <li class="bizData"><a ng-href="#/b_data/top_five" ng-click="toggleMenu()"> </a></li>
+        <li class="bizContent"><a ng-href="#/b_content" ng-click="toggleMenu()"> </a></li>
+        <li class="pix"><a ng-href="#/gallery" ng-click="toggleMenu()"> </a></li>
+    </ul>
+</nav>

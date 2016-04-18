@@ -1,0 +1,20 @@
+<div data-role="page" class="yearPage">
+    <ng-include src="'templates/header.html'"></ng-include>
+    <div data-role="content" class="business_data_page aboutTabs b_contents" data-theme="a">
+        <div class="contentWrapper" style="padding-bottom:30px;">
+            <h2 class="mainTitle">{{data.title}}</h2>
+            <div class="item" ng-repeat="item in data.items">
+                <a href="#/b_content/item/{{item.id}}" ng-if="item.img"><img class="intro_img" src="{{base}}{{item.img}}" /></a>
+				<!--<a href="#/b_content/item/{{item.id}}" ng-if="item.img"><img class="intro_img" src="http://pagenx.com/{{item.img}}" /></a>-->                
+					<a class="item_title" href="#/b_content/item/{{item.id}}">{{item.title}}</a>
+                <span class="author">{{item.author}}</span>
+                <span class="intro">{{item.intro}}</span>
+                <a class="read_more" href="#/b_content/item/{{item.id}}"></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+body{ margin-bottom:0; height:100%}
+</style>

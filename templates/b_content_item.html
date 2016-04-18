@@ -1,0 +1,17 @@
+<div data-role="page" class="yearPage">
+    <ng-include src="'templates/header.html'"></ng-include>
+    <div data-role="content" class="business_data_page aboutTabs b_content" data-theme="a">
+        <div class="contentWrapper">
+            <h2 class="mainTitle">{{data.title}}</h2>
+            <span class="author">{{data.author}}</span>
+            <div class="contents">
+                <img ng-if="data.img" src="{{base}}{{data.img}}" />
+                <!--<img ng-if="data.img" src="http://pagenx.com/{{data.img}}" />-->
+                <p class="contents"></p>
+            </div>
+        </div>
+    </div>
+</div>
+<style>
+body{ margin-bottom:0; height:100%}
+</style>

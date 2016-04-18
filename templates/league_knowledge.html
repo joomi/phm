@@ -1,0 +1,87 @@
+<div data-role="page" class="league_page messagesPage knowlagePageMain">
+    <ng-include src="'templates/header.html'"></ng-include>
+    <div data-role="content" data-theme="a">
+        <div class="contentWrapper">
+            <div class="topTitles long">
+                <h2>ידע</h2>
+                <div class="dates"> {{data.assign.start_date | date:'dd.MM.yyyy'}} - {{data.assign.end_date | date:'dd.MM.yyyy'}}</div>
+            </div>
+            <div class="league_content knowlagePageTable" ng-if="status == 'knowledge'">
+                <h2 class="mainTitle">סיכום פעילות</h2>
+                <div class="width100">
+                    <div class="floatLeft leftSpriteClockContainer width60">
+                        <div id="cntdwn" class="backgroundClockLeague" ng-bind-html="DisplayStr"></div>
+                    </div>
+                    <div class="rightSpriteLogoContainer knowledge floatRight width40"></div>
+                    <div class="clear"></div>
+                </div>
+                <div class="data">
+                    <ul>
+                        <li class="value">{{date[0] | date:'dd.MM.yyyy'}}</li>
+                        <li class="name">תאריך השתתפות:</li>
+                        <li class="value">{{date[1]}}</li>
+                        <li class="name">שעת השתתפות:</li>
+                        <li class="value">{{data.knoledge.correct_answers}}</li>
+                        <li class="name">מספר תשובות נכונות:</li>
+                        <li class="value">{{time}}</li>
+                        <li class="name">זמן מענה:</li>
+                        <li class="value bottom textAlignRight gradsCell" ng-if="data.knoledge.score != '0' && data.knoledge.score != ''">{{data.knoledge.score}}</li>
+                        <li class="name bottom" ng-if="data.knoledge.score != '0' && data.knoledge.score != ''">ניקוד:</li>
+                        <li class="clear"></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="league_content knowlagePageMess" ng-if="status =='startQuiz'">
+                
+                <div class="width100">
+                    <div class="floatLeft leftSpriteClockContainer width60">
+                        <div id="cntdwn" class="backgroundClockLeague" ng-bind-html="DisplayStr"></div>
+                    </div>
+
+                    <div class="rightSpriteLogoContainer floatRight width40">
+                        <div class="backgroundIconLeague"></div>
+                    </div>
+                    <div class="clear"></div>
+
+                </div>
+
+                <div class="data">
+                    <div class="description" ng-bind-html="description" style="padding:0 0"></div>
+					<div class="quizDemo">
+						<div class="pageQuiz">
+							<ul class="noBullet questionSingle">
+								<li class="ng-scope">
+									<ul class="noBullet questionSingle">
+										<li class="ng-binding">מאיפה זורחת השמש?</li>
+										<ul class="noBullet radios demos">
+											<li class="radiobutton">
+												<input type="radio" name="jform[question][6]" id="question_6_0" value="1">
+												<label for="question_6_0" class="ng-binding">צפון</label>
+											</li>
+											<li class="radiobutton">
+												<input type="radio" name="jform[question][6]" id="question_6_1" value="2">
+												<label for="question_6_1" class="ng-binding">דרום</label>
+											</li>
+											<li class="radiobutton ng-scope">
+												<input type="radio" name="jform[question][6]" id="question_6_2" value="3">
+												<label for="question_6_2" class="ng-binding">מזרח</label>
+											</li>
+										</ul>
+									</ul>
+								</li>
+							</ul>
+						</div>
+						<p>
+						מוכנים להתחיל?
+						</p>
+					</div>
+					<a ng-click="gotoquiz(data.quiz.id)" class="startQuiz"></a>
+                    <!-- <a href="#/league/quiz/{{data.quiz.id}}" class="startQuiz"></a> -->
+                    <div class="message">{{message}}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

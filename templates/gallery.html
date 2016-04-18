@@ -1,0 +1,18 @@
+<div data-role="page" class="yearPage">
+    <ng-include src="'templates/header.html'"></ng-include>
+    <div data-role="content" class="business_data_page cataloguePage gallery" data-theme="a">
+        <div class="contentWrapper">
+            <h2 class="mainTitle">{{data.title}}</h2>
+            <div class="catalogue_category" style="margin-top:12px;">
+                <div class="catalogue_item" ng-repeat="item in data.items">
+                	<a class="imgPh" href="#/gallery/item/{{item.id}}" style="background-image:url({{base}}{{item.img}})"></a>
+                    <a class="item_title" href="#/gallery/item/{{item.id}}">{{item.title}}</a>
+                </div>
+                <div class="clear"></div>
+            </div>
+            <div class="" ng-if="data.items.0 == null">יעלה בקרוב...</div>
+        </div>
+    </div>
+</div>
+
+
