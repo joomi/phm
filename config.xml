@@ -50,7 +50,7 @@ Shay Zalman
 		<gap:splash src="images/splash/android/spl_320.png" gap:platform="android" gap:density="mdpi" />
 		<gap:splash src="images/splash/android/spl_480.png" gap:platform="android" gap:density="hdpi" />
 
-		<access origin="*" browserOnly="true" />
+		<access origin="*" />
 		<allow-navigation href="*" />
 		<allow-intent href="http://*/*" />
 		<allow-intent href="https://*/*" />
